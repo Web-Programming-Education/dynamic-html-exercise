@@ -1,0 +1,24 @@
+# Kommentare abrufen
+GET http://localhost:3000/comments HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+###
+
+# Kommentare erstellen
+POST http://localhost:3000/comments HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "title": "Sit cillum do reprehenderit commodo deserunt nulla enim.",
+    "content": "Nisi ex deserunt veniam duis est dolor in enim. Pariatur aliquip irure cillum proident sint velit non cillum pariatur laboris reprehenderit nostrud. Lorem ipsum culpa nulla ipsum adipisicing fugiat sint esse qui ullamco. Elit sit aliqua Lorem elit Lorem voluptate sint reprehenderit ut est et officia. Irure consectetur aliquip aliquip ex. Anim fugiat aute tempor laboris tempor minim esse est consectetur in irure. Magna cupidatat laborum reprehenderit sit et minim qui enim ullamco pariatur exercitation. Dolor ipsum aliqua id reprehenderit.Consectetur ea eu qui tempor adipisicing occaecat anim id est labore duis aliquip et minim et. Id voluptate cillum pariatur dolore irure do dolor occaecat laborum pariatur adipisicing aliqua. Sit labore sit qui magna. Tempor velit ex proident laborum adipisicing veniam consequat officia sunt non et incididunt. Occaecat culpa ipsum aliqua labore qui magna reprehenderit commodo adipisicing sunt commodo magna consequat exercitation sint. Anim ullamco consequat culpa irure laboris minim sunt laboris duis officia amet. In est est tempor reprehenderit.Anim in Lorem nulla exercitation est. Quis elit commodo occaecat anim qui aliqua consectetur esse et laboris do laborum. Qui aliquip pariatur enim aliqua laboris dolore ad ut irure ex nisi cillum. Exercitation cillum anim consectetur Lorem pariatur occaecat occaecat adipisicing nostrud. Irure qui sint elit. Consequat dolore aute elit ad consectetur tempor dolor non cupidatat eu cupidatat cillum minim.Cillum magna mollit magna esse ea eiusmod excepteur irure aute est occaecat duis pariatur mollit nulla. Commodo culpa fugiat ullamco eu sunt cupidatat dolor. Veniam do voluptate velit sunt officia. Reprehenderit eiusmod incididunt labore pariatur voluptate ea duis. Quis aliquip excepteur ullamco aliquip id. Elit ullamco esse amet.In minim tempor amet. Pariatur eiusmod irure cillum ex cillum culpa sint do non laboris ipsum exercitation ipsum eiusmod deserunt. Sunt aliqua aute in ipsum. Consequat excepteur ea dolor aute adipisicing reprehenderit dolor non incididunt. Et tempor duis Lorem sit reprehenderit non exercitation aute. Consequat eu ipsum enim dolore laboris sunt eu.",
+    "username": "Cristine Blaese"
+}
+
+###
+
+# Kommentare auf den Standard zurücksetzen
+POST http://localhost:3000/comments/reset HTTP/1.1
+Content-Type: application/json
+Accept: application/json
