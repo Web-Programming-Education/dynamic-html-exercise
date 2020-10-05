@@ -29,7 +29,7 @@ CSS-Regeln dürfen nicht inline angegeben werden, sondern müssen im <style> Tag
 
 Aufgabe 2)
 
-Die Blogseite soll neben dem Hauptartikel zusätzlich eine Kommentar-Funktion.
+Die Blogseite soll neben dem Hauptartikel zusätzlich eine Kommentar-Funktion bekommen.
 Bestehende Kommentare werden von einer Web API bereitgestellt:
 
 ```http
@@ -47,6 +47,6 @@ POST localhost:3000/comments
 Die bestehende Blog-Seite aus Aufgabe 1 soll um einen Bereich innerhalb des Main-Content erweitert werden.
 
 Beim Laden der Seite sollen Kommentare von der Web API abgerufen und dynamisch in diesem neuen Bereich der Seite hinzugefügt werden.
-Oberhalb der bestehenden Kommentare soll außerdem die Möglichkeit geboten werden, einen neuen Kommentar über entsprechende Textfelder zu verfassen und über die oben genannte API zu speichern. Der Benutzername darf dabei nich länger als 20 Zeichen sein.
 
-Nach dem Speichern eines neuen Kommentars, soll dieser auf der Seite auch angezeigt werden.
+Unterhalb der bereits existierenden Kommentare soll außerdem die Möglichkeit geboten werden, einen neuen Kommentar über entsprechende Textfelder zu verfassen und über die oben genannte API zu speichern. Der Benutzername darf dabei nich länger als 20 Zeichen sein.
+Nach dem Speichern eines neuen Kommentars, soll dieser auf der Seite direkt angezeigt werden.
