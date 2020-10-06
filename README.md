@@ -41,12 +41,22 @@ Außerdem bietet die API die Möglichkeit neue Kommentare anzulegen:
 ```http
 POST localhost:3000/comments
 
-{ "title": "Kommentartitel", "content": "Kommentartext in mehreren Sätzen", "username": "Benutzername" }
+{ "title": "Kommentartitel", "content": "Kommentartext mit mehreren Wörtern", "username": "Benutzername" }
 ```
 
 Die bestehende Blog-Seite aus Aufgabe 1 soll um einen Bereich innerhalb des Main-Content erweitert werden.
 
-Beim Laden der Seite sollen Kommentare von der Web API abgerufen und dynamisch in diesem neuen Bereich der Seite hinzugefügt werden.
+Beim Laden der Seite sollen Kommentare von der Web API abgerufen und dynamisch in diesem neuen Bereich der Seite hinzugefügt werden (d.h. per Javascript und nicht manuell in das HTML kopiert). Es sollen alle Kommentar mit Überschrift, Benutzername und Inhalt untereinander angezeigt werden. Für diese Informationen sind, wo möglich, semantische HTML-Elemente zu nutzen.
 
-Unterhalb der bereits existierenden Kommentare soll außerdem die Möglichkeit geboten werden, einen neuen Kommentar über entsprechende Textfelder zu verfassen und über die oben genannte API zu speichern. Der Benutzername darf dabei nich länger als 20 Zeichen sein.
-Nach dem Speichern eines neuen Kommentars, soll dieser auf der Seite direkt angezeigt werden.
+Unterhalb dieser Kommentarliste soll außerdem die Möglichkeit geboten werden, einen neuen Kommentar über entsprechende Textfelder zu verfassen und über die oben genannte API zu speichern. Das Formular soll anhand nachfolgender Bedinungen validiert werden und nur wenn alle Bedingungen erfüllt sind gesendet werden. Der Benutzer soll auf beliebige Art auf Validierungprobleme hingewiesen werden, sodass er diese beheben kann. Bedingungen:
+
+* Die Anagbe des Benutzernamens ist verpflichtend. Der Benutzername muss mindestens 4 und nicht länger als 20 Zeichen sein.
+* Die Angabe des Titels ist verpflichtend.
+* Die Angabe des Inhalts ist verpflichtend und muss mindestens zwei Wörter enthalten.
+
+Nach dem Absenden eines neuen Kommentars, soll dieser auf der Seite direkt angezeigt werden.
+
+## Hinweis
+
+Die angelegten Kommentare können zu Testzwecken mit folgender API zurückgesetzt werden:
+`POST http://localhost:3000/comments/reset HTTP/1.1`
