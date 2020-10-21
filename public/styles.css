@@ -1,0 +1,103 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 350px 1fr;
+    font-size: 1.5rem;
+    font-family: serif;
+    color: #333;
+
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: sans-serif;
+}
+
+nav {
+    grid-area: sidebar;
+    margin: 2rem;
+    border-right: 1px solid #333
+}
+
+header {
+    grid-area: header;
+    font-size: 2.5rem;
+}
+
+footer {
+    grid-area: footer;
+}
+
+header, footer {
+    color: #222;
+    background-color: #32a852;
+    padding: 2rem;
+}
+
+main {
+    grid-area: main;
+    padding: 2rem;
+}
+
+#section__comments {
+    margin-top: 5em;
+    padding: 0 5em;
+}
+
+#section__comments h2 {
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5em;
+}
+
+.comment {
+    margin: 5rem 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "title user"
+        "comment comment";
+}
+
+.comment h3 {
+    grid-area: title;
+}
+
+.comment span {
+    grid-area: user;
+    color: #555;
+}
+
+.comment p {
+    grid-area: comment;
+}
+
+
+input, textarea, button {
+    padding: 0.5em;
+    font-size: 1.5rem;
+}
+
+#section__comments form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
+
+#section__comments form label {
+    align-self: center;
+    font-weight: 700;
+}
+
+#section__comments form textarea {
+    height: 15em;
+}

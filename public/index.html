@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solution-Blog</title>
+
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <header>My Fancy Blog</header>
+  <nav>
+    <ul>
+      <li><a href="#">Neuster Artikel</a></li>
+      <li><a href="#">Zufälliger Artikel</a></li>
+    </ul>
+  </nav>
+  <main>
+    <article>
+      <h1>Blog-Titel</h1>
+      <p>Culpa irure irure in irure pariatur amet enim laboris tempor culpa aliqua nisi est. Aute nulla dolore occaecat. Dolore elit voluptate mollit. Non esse cupidatat quis nostrud sit elit cupidatat sit nisi nostrud amet ad proident cupidatat nisi. Eiusmod labore id aliquip aute eu eiusmod elit incididunt tempor laboris in nostrud aliquip magna.
+Officia proident Lorem ad exercitation qui. Esse sint esse ex adipisicing laboris. Consequat est proident ut dolore cupidatat dolore nostrud id commodo esse sunt tempor proident cupidatat deserunt. Anim duis do reprehenderit elit laborum. Ea mollit anim aute elit tempor aute aute adipisicing ea esse mollit.
+Aliqua consectetur laboris amet aliquip nisi Lorem laboris incididunt ad mollit ea aliquip ex ipsum eu. Laborum officia nostrud tempor pariatur sunt proident irure sunt adipisicing magna exercitation. Aute labore occaecat velit duis esse voluptate amet aliquip occaecat laborum. Ullamco labore qui consequat occaecat esse duis aliquip aliqua. Occaecat mollit ad minim id labore minim. Nisi irure exercitation cupidatat commodo adipisicing laborum id esse minim enim aute deserunt non. Irure eu sunt ullamco eu ad adipisicing commodo exercitation fugiat. Ut ea officia laboris laborum cillum reprehenderit officia.
+Ex proident reprehenderit excepteur ea consequat irure duis voluptate labore. Dolore cupidatat qui velit incididunt qui. Eiusmod consequat ex sunt. Nostrud laboris quis aute qui excepteur anim esse occaecat exercitation qui ullamco sit consectetur. Aliquip dolor do elit in. Laboris aliqua velit veniam dolore ea voluptate dolor consectetur elit. Qui ut fugiat sint. Incididunt reprehenderit qui pariatur reprehenderit esse aliqua velit dolore est minim.
+Ut Lorem eu consectetur sunt excepteur sunt et labore. Aute do in aute laboris do est. Exercitation excepteur labore consequat velit aliquip aute tempor ullamco. Mollit fugiat labore eiusmod nulla.</p>
+    </article>
+    <section id="section__comments">
+      <h2>Kommentare</h2>
+      <div id="comments"></div>
+      <h2>Neuen Kommentar hinzufügen</h3>
+      <form name="add-comment" action="/comments" method="post">
+        <label for="username">Benutzername</label>
+        <input type="text" name="username">
+        <label for="title">Titel</label>
+        <input type="text" name="title">
+        <label for="content">Kommentar</label>
+        <textarea name="content"></textarea>
+        <button onclick="sendComment(event)">Absenden</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    Impressum etc...
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
