@@ -11,17 +11,17 @@ const postJson = async function(url, obj) {
 }
 
 async function sendComment(e) {
-  e.preventDefault()
+  e.preventDefault();
   
   const inputData = document
     .forms['add-comment']
-    .elements
+    .elements;
 
   const jsonData = {
-    "username": inputData['username'].value,
-    "title": inputData['title'].value,
-    "content": inputData['content'].value
-  }
+    username: inputData['username'].value,
+    title: inputData['title'].value,
+    content: inputData['content'].value
+  };
 
   if (jsonData.username.length < 4) {
     alert("Benutzername zu kurz. Sollte mindestens 4 Zeichen lang sein.");
@@ -42,15 +42,15 @@ async function sendComment(e) {
 
   const successful = await postJson('/comments', jsonData);
   if (successful) {
-    renderComment(document.querySelector('#comments'), jsonData)
+    renderComment(document.querySelector('#comments'), jsonData);
   } else {
-    alert("Failed to add your comments")
+    alert("Failed to add your comments");
   }
 }
 
 async function getComments() {
   const response = await fetch('/comments');
-  return await response.json()
+  return await response.json();
 }
 
 function renderComment(element, comment) {
@@ -58,27 +58,27 @@ function renderComment(element, comment) {
     commentElement.classList.add('comment');
     
     const title = document.createElement("h3");
-    title.textContent = comment.title
+    title.textContent = comment.title;
     const user = document.createElement("span");
-    user.textContent = comment.username
+    user.textContent = comment.username;
     const content = document.createElement("p");
-    content.textContent = comment.content
+    content.textContent = comment.content;
     
-    commentElement.appendChild(title)
-    commentElement.appendChild(user)
-    commentElement.appendChild(content)
+    commentElement.appendChild(title);
+    commentElement.appendChild(user);
+    commentElement.appendChild(content);
 
-    element.appendChild(commentElement)
+    element.appendChild(commentElement);
 }
 
 function renderComments(element, comments) {
   comments.forEach(c => renderComment(element, c));
 }
 
-async function renderComments() {
+async function fetchAndDisplayComments() {
   const comments = await getComments();
   const container = document.querySelector('#comments');
-  comments.forEach(c => renderComment(container, c));
+  renderComments(container, comments);
 }
 
-renderComments();
+fetchAndDisplayComments();
