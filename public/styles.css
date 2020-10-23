@@ -1,56 +1,80 @@
 html, body {
     margin: 0px;
     padding: 0px;
+    /* Diese folgende Regel sorgt dafür, dass der Footer immer am unteren Bildschirmrand ist.
+    Auch, wenn der Inhalt kürzer ist als die Bildschirmhöhe */
     min-height: 100%;
-}
-
-body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 350px 1fr;
-    font-size: 1.5rem;
-    font-family: serif;
-    color: #333;
-
-    grid-template-areas: 
-        "header header"
-        "sidebar main"
-        "footer footer";
 }
 
 h1,h2,h3,h4,h5,h6 {
     font-family: sans-serif;
 }
 
+body {
+    font-size: 1rem;
+    font-family: serif;
+    color: #333;
+
+    /* HAUPT-SEITENLAYOUT */
+    display: grid;
+    /* Header und Footer nehmen den Platz ein, den sie benötigen (auto),
+    der Inhalt dazwischen den Rest (1fr) */
+    grid-template-rows: auto 1fr auto;
+    /* Die Sidebar soll eine fixe Breite haben, 
+    der Inhalt selbst mit der Bildschirmgröße skalieren */
+    grid-template-columns: 250px 1fr;
+    /* Den oben angegebenen Zeilen und Spalten werden Namen gegeben */
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
 nav {
+    /* Zuweisung in die oben definierte, benannte Grid Area */
     grid-area: sidebar;
-    margin: 2rem;
+    /* Durch die 0 an zweiter Stelle (rechte Seite) wird 
+    ein doppelter Abstand zwischen Blog-Text und Sidebar vermieden */
+    margin: 2rem 0 2rem 2rem;
+    /* Beispiel: visuelle Abgrenzung der Area per Rahmen an einer Seite */
     border-right: 1px solid #333
 }
 
 header {
+    /* Zuweisung in die oben definierte, benannte Grid Area */
     grid-area: header;
+    
     font-size: 2.5rem;
 }
 
 footer {
+    /* Zuweisung in die oben definierte, benannte Grid Area */
     grid-area: footer;
 }
 
 header, footer {
     color: #222;
+    /* Beispiel: visuelle Abgrenzung der Area per Hintergrundfarbe */
     background-color: #32a852;
     padding: 2rem;
 }
 
 main {
+    /* Zuweisung in die oben definierte, benannte Grid Area */
     grid-area: main;
     padding: 2rem;
 }
 
+article p {
+    font-size: 1.2rem;
+}
+
 #section__comments {
     margin-top: 5em;
-    padding: 0 5em;
+    /* Angabe des Paddings links und rechts als 5% der Bildschirmbreite (viewport width)
+    Dadurch wirkt der Abstand, im Vergleich zu einer fixen Maßeinheit wie Pixel oder em/rem,
+    auf kleinen Geräten nicht zu groß und der Text bleib breiter */
+    padding: 0 5vw;
 }
 
 #section__comments h2 {
@@ -58,33 +82,41 @@ main {
     padding-bottom: 0.5em;
 }
 
+/* Styling eines Kommentars z.B. als Grid, um Titel und Nutzername anzuordnen */
 .comment {
-    margin: 5rem 0;
+    margin: 3rem 0;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
     grid-template-areas:
         "title user"
         "comment comment";
+    /* Zentriere alle Element innerhalb des Grid vertikal
+    Betrifft hier den Benutzernamen, da der Title mehr Platz braucht */
+    align-items: center;
 }
 
 .comment h3 {
+    /* Zuweisung in die oben definierte, benannte Grid Area */
     grid-area: title;
 }
 
 .comment span {
+     /* Zuweisung in die oben definierte, benannte Grid Area */
     grid-area: user;
     color: #555;
 }
 
 .comment p {
+     /* Zuweisung in die oben definierte, benannte Grid Area */
     grid-area: comment;
 }
 
+/* Formular */
 
 input, textarea, button {
     padding: 0.5em;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 #section__comments form {
@@ -94,10 +126,21 @@ input, textarea, button {
 }
 
 #section__comments form label {
+    /* Platziere nur die Labels mittig (vertikal zentriert) gegenüber den Eingabefeldern */
     align-self: center;
     font-weight: 700;
 }
 
 #section__comments form textarea {
     height: 15em;
+}
+
+/* Beispiel um das Verhalten auf mobilen Geräten noch weiter zu verbessern,
+da das Formular sonst die Breite der Seite sprengt */
+@media (max-width: 700px) {
+    #section__comments form {
+        /* Das Formular hat nur noch eine Spalte, 
+        d.h. Label und Eingabefeld werden untereinander platziert statt nebeneinandner */
+        grid-template-columns: 100%;
+    }
 }
